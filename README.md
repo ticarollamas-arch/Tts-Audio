@@ -1,86 +1,49 @@
-# Gemini Voice Library
+<p align="center"><img src="assets/banner.svg" alt="Voice Library — biblioteca de vozes, casting e roteiros com IA" width="100%"></p>
 
-Uma aplicação moderna e intuitiva para exploração, audição e casting inteligente de vozes com Inteligência Artificial para Text-to-Speech (TTS), com estúdio integrado de geração de roteiros narrativos (60 a 90 segundos) em Português do Brasil.
+# Voice Library — biblioteca de vozes TTS, casting com IA e roteiros narrativos
 
----
+Aplicação web em **React + TypeScript** para **explorar, ouvir e escolher vozes de síntese de fala (TTS)**. Ela recomenda vozes a partir de uma descrição (casting com IA) e gera **roteiros narrativos de 60 a 90 segundos em português do Brasil**, que podem ser ouvidos na voz escolhida. Usa o **Google Gemini** para texto e áudio e, opcionalmente, a **NVIDIA NIM** (Llama 3.3 70B) para os roteiros.
 
-## 🌟 Funcionalidades
+## Recursos
 
-- **Biblioteca Interativa de Vozes**: Navegue pelas vozes em visualização Carrossel 3D imersivo ou Grade completa, com reprodução e visualizador de áudio em tempo real.
-- **AI Casting**: Descreva o tom, emoção, gênero ou projeto desejado e receba recomendações precisas de vozes correspondentes.
-- **Estúdio de Texto Narrativo (60-90s)**: Gere narrativas, histórias e roteiros cronometrados para 60 a 90 segundos de locução natural em Português do Brasil (PT-BR).
-- **Suporte Multi-Provedor**:
-  - **Google Gemini**: Geração de roteiros, recomendações de casting e síntese de áudio TTS via modelo Gemini Flash.
-  - **NVIDIA NIM**: Integração com modelos Llama 3.3 70B Instruct para criação de textos e roteiros.
-- **Filtros Avançados**: Filtre vozes por gênero (Masculino, Feminino), tom/pitch (Grave, Médio, Agudo) e busca instantânea.
-- **Tema Claro / Escuro**: Alternância elegante entre modo claro e escuro.
-- **Interface Responsiva**: Otimizada para desktop, tablets e smartphones.
+- **Biblioteca de vozes** em carrossel 3D ou grade, com reprodução e visualizador de áudio em tempo real.
+- **Casting com IA**: descreva tom, emoção, gênero ou projeto e receba as vozes mais adequadas.
+- **Estúdio de roteiros**: narrativas e histórias cronometradas para 60 a 90 segundos de locução em PT-BR, com prévia em áudio.
+- **Filtros** por gênero, tom (grave, médio, agudo) e busca instantânea.
+- **Dois provedores**: Gemini (roteiros, casting e TTS) e NVIDIA NIM (roteiros), com chaves configuráveis na interface.
+- **Tema claro/escuro** e layout responsivo.
 
----
+## Instalação
 
-## 🚀 Tecnologias Utilizadas
+Requisitos: **Node.js 18+** e uma chave da API do **Gemini**.
 
-- **React 19**
-- **TypeScript**
-- **Vite**
-- **Tailwind CSS**
-- **Framer Motion**
-- **Lucide React** (Ícones)
-- **@google/genai** SDK
-
----
-
-## 📦 Como Executar o Projeto Localmente
-
-### Pré-requisitos
-- Node.js (versão 18 ou superior)
-- npm, yarn ou bun
-
-### Instalação
-
-1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/gemini-voice-library.git
-cd gemini-voice-library
-```
-
-2. Instale as dependências:
-```bash
+git clone https://github.com/ticarollamas-arch/Tts-Audio.git
+cd Tts-Audio
 npm install
+cp .env.example .env      # GEMINI_API_KEY (também pode ser informada na interface)
 ```
 
-3. Inicie o servidor de desenvolvimento:
+A chave da NVIDIA NIM é opcional e é cadastrada pelo botão **API** no cabeçalho.
+
+## Como usar
+
 ```bash
-npm run dev
+npm run dev       # http://localhost:3000
+npm run build     # build de produção
+npm run preview
 ```
 
-4. Abra no seu navegador:
-```
-http://localhost:3000
-```
+1. Navegue pelas vozes e ouça as amostras.
+2. Use o casting com IA para receber recomendações.
+3. Abra o estúdio, gere um roteiro e ouça a narração na voz escolhida.
 
----
+> As chaves informadas na interface ficam no navegador. Em produção, prefira um backend para proteger as credenciais.
 
-## 🔑 Configuração de Chaves de API
+## Tecnologias
 
-A aplicação permite configurar suas chaves de API diretamente na interface ou via arquivo de ambiente:
+React 19 · TypeScript · Vite · Tailwind CSS · Framer Motion · react-markdown · lucide-react · Google Gemini (`@google/genai`) · NVIDIA NIM
 
-- **Chave Gemini**: Obtenha sua chave no console Gemini e configure no modal de chaves na interface ou no arquivo `.env`:
-  ```env
-  GEMINI_API_KEY=sua_chave_aqui
-  ```
-- **Chave NVIDIA NIM (Opcional)**: Caso prefira utilizar a API da NVIDIA para geração de narrativas, adicione sua chave através do botão **API** no cabeçalho da aplicação.
+## Licença
 
----
-
-## 🛠️ Scripts Disponíveis
-
-- `npm run dev`: Inicia o servidor local de desenvolvimento.
-- `npm run build`: Compila a aplicação para produção na pasta `dist/`.
-- `npm run preview`: Executa o servidor de pré-visualização do pacote de produção.
-
----
-
-## 📄 Licença
-
-Distribuído sob a licença Apache-2.0.
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE).
